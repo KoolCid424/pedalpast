@@ -2,31 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
   <meta name="theme-color" content="#f3efe6">
 
-  <meta name="description" content="PedalPast - Private vintage bicycle experiences. Website currently under development.">
+  <meta
+    name="description"
+    content="PedalPast - Private vintage bicycle experiences. Website currently under development."
+  >
 
   <title>PedalPast | Under Development</title>
 
   <!-- FAVICON -->
-  <link rel="icon" type="image/png" href="https://i.ibb.co/PvZWWyRx/transparent-logo.png">
-  <link rel="apple-touch-icon" href="https://i.ibb.co/PvZWWyRx/transparent-logo.png">
+  <link
+    rel="icon"
+    type="image/png"
+    href="https://i.ibb.co/PvZWWyRx/transparent-logo.png"
+  >
 
+  <link
+    rel="apple-touch-icon"
+    href="https://i.ibb.co/PvZWWyRx/transparent-logo.png"
+  >
+
+  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
     :root {
       --bg: #f3efe6;
-      --paper: #faf8f2;
       --ink: #171714;
       --muted: #77736a;
       --line: rgba(23, 23, 20, 0.13);
       --accent: #d95f32;
     }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -34,245 +63,374 @@
       padding: 0;
     }
 
-    html,
-    body {
+    html {
       width: 100%;
       min-height: 100%;
+      background: var(--bg);
     }
 
     body {
+      width: 100%;
+      min-height: 100svh;
+
+      margin: 0;
+
       background: var(--bg);
       color: var(--ink);
+
       font-family: "Inter", sans-serif;
+
       overflow: hidden;
+
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    /* BACKGROUND */
+
+    /* =========================================================
+       BACKGROUND
+    ========================================================= */
 
     .background {
       position: fixed;
       inset: 0;
+
+      width: 100%;
+      height: 100%;
+
       overflow: hidden;
+
       pointer-events: none;
+
+      z-index: 0;
     }
+
 
     .grid {
       position: absolute;
-      inset: -50%;
-      width: 200%;
-      height: 200%;
+
+      top: -60%;
+      left: -60%;
+
+      width: 220%;
+      height: 220%;
 
       background-image:
-        linear-gradient(to right, var(--line) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+        linear-gradient(
+          to right,
+          var(--line) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          to bottom,
+          var(--line) 1px,
+          transparent 1px
+        );
 
-      background-size: 70px 70px;
+      background-size: 60px 60px;
+
+      opacity: 0.45;
 
       transform: rotate(-7deg);
-      opacity: 0.55;
 
-      animation: gridMove 22s linear infinite;
+      animation: gridMove 24s linear infinite;
     }
+
 
     @keyframes gridMove {
       from {
-        transform: translate3d(0, 0, 0) rotate(-7deg);
+        transform:
+          translate3d(0, 0, 0)
+          rotate(-7deg);
       }
 
       to {
-        transform: translate3d(-70px, -70px, 0) rotate(-7deg);
+        transform:
+          translate3d(-60px, -60px, 0)
+          rotate(-7deg);
       }
     }
+
 
     .orb {
       position: absolute;
 
-      width: 42vw;
-      height: 42vw;
-
-      min-width: 350px;
-      min-height: 350px;
+      width: 75vw;
+      height: 75vw;
 
       border-radius: 50%;
 
-      background: radial-gradient(
-        circle,
-        rgba(217, 95, 50, 0.16) 0%,
-        rgba(217, 95, 50, 0.07) 35%,
-        transparent 70%
-      );
+      background:
+        radial-gradient(
+          circle,
+          rgba(217, 95, 50, 0.15) 0%,
+          rgba(217, 95, 50, 0.06) 38%,
+          transparent 70%
+        );
 
-      filter: blur(12px);
+      filter: blur(15px);
 
-      animation: float 9s ease-in-out infinite;
+      animation: floatingOrb 10s ease-in-out infinite;
     }
+
 
     .orb.one {
-      top: -18%;
-      right: -8%;
+      top: -30%;
+      right: -25%;
     }
+
 
     .orb.two {
-      bottom: -25%;
-      left: -12%;
-      animation-delay: -4s;
+      bottom: -30%;
+      left: -25%;
+
+      animation-delay: -5s;
     }
 
-    @keyframes float {
-      0%, 100% {
+
+    @keyframes floatingOrb {
+
+      0%,
+      100% {
         transform: translate3d(0, 0, 0);
       }
 
       50% {
-        transform: translate3d(25px, -20px, 0);
+        transform: translate3d(15px, -15px, 0);
       }
+
     }
 
-    /* PAGE */
+
+    /* =========================================================
+       PAGE
+    ========================================================= */
 
     .page {
       position: relative;
+
       z-index: 2;
 
-      min-height: 100vh;
+      width: 100%;
       min-height: 100svh;
 
       display: flex;
       flex-direction: column;
 
-      padding: 32px 42px;
+      padding:
+        max(20px, env(safe-area-inset-top))
+        max(20px, env(safe-area-inset-right))
+        max(20px, env(safe-area-inset-bottom))
+        max(20px, env(safe-area-inset-left));
     }
 
-    /* HEADER */
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
 
     header {
+      width: 100%;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      animation: fadeDown 0.8s ease both;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
       gap: 15px;
 
-      text-decoration: none;
-      color: inherit;
+      animation:
+        fadeDown 0.7s ease both;
     }
 
+
+    .brand {
+      min-width: 0;
+
+      display: flex;
+      align-items: center;
+
+      gap: 11px;
+
+      color: inherit;
+      text-decoration: none;
+    }
+
+
     .brand img {
-      width: 58px;
-      height: 58px;
+      width: 48px;
+      height: 48px;
+
+      flex: 0 0 48px;
 
       object-fit: contain;
 
       display: block;
     }
 
+
     .brand-name {
-      font-size: 19px;
+      font-size: 16px;
+      line-height: 1;
+
       font-weight: 900;
+
       letter-spacing: -0.7px;
+
+      white-space: nowrap;
     }
 
+
     .status {
+      flex-shrink: 0;
+
       display: flex;
       align-items: center;
-      gap: 9px;
+
+      gap: 7px;
 
       font-family: "DM Mono", monospace;
-      font-size: 11px;
-      letter-spacing: 0.08em;
+
+      font-size: 8px;
+
+      line-height: 1.2;
+
+      letter-spacing: 0.07em;
+
       text-transform: uppercase;
 
       color: var(--muted);
+
+      white-space: nowrap;
     }
 
+
     .status-dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
+
+      flex: 0 0 7px;
 
       border-radius: 50%;
 
       background: var(--accent);
 
-      box-shadow: 0 0 0 0 rgba(217, 95, 50, 0.4);
-
       animation: pulse 2s infinite;
     }
 
+
     @keyframes pulse {
+
       0% {
-        box-shadow: 0 0 0 0 rgba(217, 95, 50, 0.45);
+        box-shadow:
+          0 0 0 0
+          rgba(217, 95, 50, 0.45);
       }
 
       70% {
-        box-shadow: 0 0 0 9px rgba(217, 95, 50, 0);
+        box-shadow:
+          0 0 0 8px
+          rgba(217, 95, 50, 0);
       }
 
       100% {
-        box-shadow: 0 0 0 0 rgba(217, 95, 50, 0);
+        box-shadow:
+          0 0 0 0
+          rgba(217, 95, 50, 0);
       }
+
     }
 
-    /* MAIN */
+
+    /* =========================================================
+       MAIN
+    ========================================================= */
 
     main {
       flex: 1;
+
+      width: 100%;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      padding: 30px 0;
+      padding:
+        clamp(35px, 8vh, 75px)
+        0
+        clamp(30px, 7vh, 65px);
     }
 
+
     .content {
-      width: min(100%, 1050px);
+      width: 100%;
+      max-width: 1050px;
 
       text-align: center;
     }
 
-    /* EYEBROW */
+
+    /* =========================================================
+       EYEBROW
+    ========================================================= */
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
 
-      padding: 9px 13px;
+      gap: 8px;
+
+      padding: 8px 11px;
 
       border: 1px solid var(--line);
+
       border-radius: 999px;
 
-      background: rgba(250, 248, 242, 0.55);
+      background:
+        rgba(250, 248, 242, 0.55);
 
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
 
       font-family: "DM Mono", monospace;
-      font-size: 10px;
+
+      font-size: 8px;
+
+      line-height: 1;
+
       letter-spacing: 0.1em;
+
       text-transform: uppercase;
 
       color: var(--muted);
 
-      animation: fadeUp 0.8s 0.15s ease both;
+      animation:
+        fadeUp 0.7s 0.1s ease both;
     }
+
 
     .eyebrow span {
       color: var(--accent);
     }
 
-    /* HEADING */
+
+    /* =========================================================
+       MAIN HEADING
+    ========================================================= */
 
     h1 {
-      margin-top: 28px;
+      margin-top: 23px;
 
-      font-size: clamp(55px, 10vw, 145px);
-      line-height: 0.84;
+      width: 100%;
+
+      font-size:
+        clamp(
+          54px,
+          16.8vw,
+          92px
+        );
+
+      line-height: 0.86;
 
       letter-spacing: -0.085em;
 
@@ -281,61 +439,92 @@
       text-transform: uppercase;
 
       animation:
-        reveal 1s 0.25s cubic-bezier(.16,1,.3,1) both;
+        reveal
+        0.95s
+        0.2s
+        cubic-bezier(.16, 1, .3, 1)
+        both;
     }
+
 
     h1 .outline {
       color: transparent;
 
-      -webkit-text-stroke: 1.5px var(--ink);
+      -webkit-text-stroke:
+        clamp(1px, 0.35vw, 1.5px)
+        var(--ink);
     }
 
-    /* DESCRIPTION */
+
+    /* =========================================================
+       DESCRIPTION
+    ========================================================= */
 
     .description {
-      width: min(590px, 100%);
+      width: min(100%, 480px);
 
-      margin: 30px auto 0;
+      margin:
+        25px auto 0;
 
-      font-size: 16px;
-      line-height: 1.7;
+      padding:
+        0 8px;
+
+      font-size: 14px;
+
+      line-height: 1.65;
 
       color: var(--muted);
 
-      animation: fadeUp 0.8s 0.45s ease both;
+      animation:
+        fadeUp 0.7s 0.4s ease both;
     }
 
-    /* PROGRESS */
+
+    /* =========================================================
+       PROGRESS
+    ========================================================= */
 
     .progress-wrap {
-      width: min(430px, 100%);
+      width: min(100%, 330px);
 
-      margin: 42px auto 0;
+      margin:
+        31px auto 0;
 
-      animation: fadeUp 0.8s 0.6s ease both;
+      animation:
+        fadeUp 0.7s 0.55s ease both;
     }
+
 
     .progress-info {
       display: flex;
       justify-content: space-between;
 
-      margin-bottom: 9px;
+      margin-bottom: 8px;
 
       font-family: "DM Mono", monospace;
-      font-size: 9px;
+
+      font-size: 8px;
+
+      line-height: 1.2;
+
       letter-spacing: 0.08em;
+
       text-transform: uppercase;
 
       color: var(--muted);
     }
 
+
     .progress {
+      width: 100%;
       height: 3px;
 
-      background: rgba(23, 23, 20, 0.1);
-
       overflow: hidden;
+
+      background:
+        rgba(23, 23, 20, 0.1);
     }
+
 
     .progress-bar {
       width: 72%;
@@ -346,10 +535,16 @@
       transform-origin: left;
 
       animation:
-        progress 1.5s 0.8s cubic-bezier(.16,1,.3,1) both;
+        progress
+        1.4s
+        0.75s
+        cubic-bezier(.16, 1, .3, 1)
+        both;
     }
 
+
     @keyframes progress {
+
       from {
         transform: scaleX(0);
       }
@@ -357,134 +552,235 @@
       to {
         transform: scaleX(1);
       }
+
     }
 
-    /* FOOTER */
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
 
     footer {
+      width: 100%;
+
       display: flex;
+
       justify-content: space-between;
       align-items: flex-end;
 
-      padding-top: 25px;
+      gap: 20px;
 
-      border-top: 1px solid var(--line);
+      padding-top: 17px;
 
-      animation: fadeUp 0.8s 0.8s ease both;
+      border-top:
+        1px solid var(--line);
+
+      animation:
+        fadeUp 0.7s 0.7s ease both;
     }
+
 
     .footer-left {
       font-family: "DM Mono", monospace;
 
-      font-size: 9px;
-      line-height: 1.7;
+      font-size: 7px;
+
+      line-height: 1.65;
 
       letter-spacing: 0.08em;
+
       text-transform: uppercase;
 
       color: var(--muted);
     }
 
+
     .footer-right {
+      flex-shrink: 0;
+
       text-align: right;
 
-      font-size: 12px;
+      font-size: 10px;
+
+      line-height: 1.3;
+
       font-weight: 600;
     }
 
-    /* ANIMATIONS */
+
+    /* =========================================================
+       ANIMATIONS
+    ========================================================= */
 
     @keyframes fadeDown {
+
       from {
         opacity: 0;
-        transform: translateY(-15px);
+        transform: translateY(-12px);
       }
 
       to {
         opacity: 1;
         transform: translateY(0);
       }
+
     }
+
 
     @keyframes fadeUp {
+
       from {
         opacity: 0;
-        transform: translateY(18px);
+        transform: translateY(15px);
       }
 
       to {
         opacity: 1;
         transform: translateY(0);
       }
+
     }
+
 
     @keyframes reveal {
+
       from {
         opacity: 0;
-        transform: translateY(45px);
 
-        clip-path: inset(100% 0 0 0);
+        transform:
+          translateY(35px);
+
+        clip-path:
+          inset(100% 0 0 0);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
 
-        clip-path: inset(0 0 0 0);
+        transform:
+          translateY(0);
+
+        clip-path:
+          inset(0 0 0 0);
       }
+
     }
 
-    /* MOBILE */
 
-    @media (max-width: 650px) {
+    /* =========================================================
+       VERY SMALL PHONES
+    ========================================================= */
+
+    @media (max-width: 380px) {
 
       .page {
-        padding: 22px 20px;
+        padding:
+          max(17px, env(safe-area-inset-top))
+          max(17px, env(safe-area-inset-right))
+          max(17px, env(safe-area-inset-bottom))
+          max(17px, env(safe-area-inset-left));
       }
+
 
       .brand img {
-        width: 47px;
-        height: 47px;
+        width: 42px;
+        height: 42px;
+
+        flex-basis: 42px;
       }
+
 
       .brand-name {
-        font-size: 16px;
+        font-size: 14px;
       }
+
 
       .status {
-        font-size: 8px;
-      }
-
-      h1 {
-        font-size: clamp(52px, 17vw, 90px);
-
-        letter-spacing: -0.075em;
-      }
-
-      .description {
-        font-size: 14px;
-
-        padding: 0 12px;
-      }
-
-      .progress-wrap {
-        margin-top: 35px;
-      }
-
-      footer {
-        align-items: center;
-      }
-
-      .footer-right {
-        font-size: 10px;
-      }
-
-      .footer-left {
         font-size: 7px;
       }
+
+
+      h1 {
+        font-size: 15.8vw;
+      }
+
+
+      .description {
+        font-size: 13px;
+
+        margin-top: 22px;
+      }
+
+
+      .progress-wrap {
+        margin-top: 27px;
+      }
+
     }
 
-    /* ACCESSIBILITY */
+
+    /* =========================================================
+       LANDSCAPE PHONES
+    ========================================================= */
+
+    @media (max-height: 600px) and (orientation: landscape) {
+
+      .page {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+
+      .brand img {
+        width: 38px;
+        height: 38px;
+
+        flex-basis: 38px;
+      }
+
+
+      main {
+        padding:
+          15px 0;
+      }
+
+
+      h1 {
+        margin-top: 13px;
+
+        font-size:
+          clamp(
+            45px,
+            12vh,
+            70px
+          );
+      }
+
+
+      .description {
+        margin-top: 13px;
+
+        font-size: 12px;
+
+        line-height: 1.45;
+      }
+
+
+      .progress-wrap {
+        margin-top: 18px;
+      }
+
+
+      footer {
+        padding-top: 10px;
+      }
+
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -497,24 +793,35 @@
       }
 
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- ANIMATED BACKGROUND -->
+
+  <!-- =======================================================
+       BACKGROUND
+  ======================================================== -->
 
   <div class="background">
+
     <div class="grid"></div>
 
     <div class="orb one"></div>
+
     <div class="orb two"></div>
+
   </div>
 
 
-  <!-- PAGE -->
+  <!-- =======================================================
+       PAGE
+  ======================================================== -->
 
   <div class="page">
+
 
     <!-- HEADER -->
 
@@ -528,7 +835,7 @@
 
         <img
           src="https://i.ibb.co/PvZWWyRx/transparent-logo.png"
-          alt="PedalPast logo"
+          alt="PedalPast"
         >
 
         <span class="brand-name">
@@ -549,30 +856,54 @@
     </header>
 
 
-    <!-- MAIN CONTENT -->
+
+    <!-- MAIN -->
 
     <main>
 
       <section class="content">
 
+
+        <!-- EYEBROW -->
+
         <div class="eyebrow">
+
           <span>●</span>
+
           PedalPast / 2026
+
         </div>
 
 
+
+        <!-- TITLE -->
+
         <h1>
+
           Under<br>
-          <span class="outline">Development</span>
+
+          <span class="outline">
+            Development
+          </span>
+
         </h1>
 
 
+
+        <!-- DESCRIPTION -->
+
         <p class="description">
-          We’re currently putting the finishing touches on the new PedalPast
-          experience. The bicycles are ready. The adventures are taking shape.
-          The website just needs a little more time in the workshop.
+
+          We’re currently putting the finishing touches on the new
+          PedalPast experience. The bicycles are ready. The adventures
+          are taking shape. The website just needs a little more time
+          in the workshop.
+
         </p>
 
+
+
+        <!-- PROGRESS -->
 
         <div class="progress-wrap">
 
@@ -597,14 +928,17 @@
 
         </div>
 
+
       </section>
 
     </main>
 
 
+
     <!-- FOOTER -->
 
     <footer>
+
 
       <div class="footer-left">
 
@@ -621,9 +955,12 @@
 
       </div>
 
+
     </footer>
 
+
   </div>
+
 
 </body>
 </html>
