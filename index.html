@@ -5,17 +5,17 @@
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
 
-  <meta name="theme-color" content="#f3efe6">
+  <meta name="theme-color" content="#f1ede3">
 
   <meta
     name="description"
-    content="PedalPast - Private vintage bicycle experiences. Website currently under development."
+    content="PedalPast. Private vintage bicycle experiences. Website coming soon."
   >
 
-  <title>PedalPast | Under Development</title>
+  <title>PedalPast | Coming Soon</title>
 
   <!-- FAVICON -->
   <link
@@ -29,7 +29,7 @@
     href="https://i.ibb.co/PvZWWyRx/transparent-logo.png"
   >
 
-  <!-- FONTS -->
+  <!-- FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -38,178 +38,56 @@
     rel="stylesheet"
   >
 
+
   <style>
 
-    /* =========================================================
-       VARIABLES
-    ========================================================= */
-
-    :root {
-      --bg: #f3efe6;
-      --ink: #171714;
-      --muted: #77736a;
-      --line: rgba(23, 23, 20, 0.13);
-      --accent: #d95f32;
-    }
-
-
-    /* =========================================================
+    /* =====================================================
        RESET
-    ========================================================= */
+    ===================================================== */
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
-    html {
+    html,
+    body {
       width: 100%;
       min-height: 100%;
-      background: var(--bg);
+      margin: 0;
     }
 
     body {
-      width: 100%;
-      min-height: 100svh;
-
-      margin: 0;
-
-      background: var(--bg);
-      color: var(--ink);
+      background: #f1ede3;
+      color: #151513;
 
       font-family: "Inter", sans-serif;
 
-      overflow: hidden;
-
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+
+      overflow-x: hidden;
     }
 
 
-    /* =========================================================
-       BACKGROUND
-    ========================================================= */
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
 
-    .background {
-      position: fixed;
-      inset: 0;
-
-      width: 100%;
-      height: 100%;
-
-      overflow: hidden;
-
-      pointer-events: none;
-
-      z-index: 0;
+    :root {
+      --cream: #f1ede3;
+      --ink: #151513;
+      --grey: #77736a;
+      --orange: #d45d31;
+      --line: rgba(21, 21, 19, 0.14);
     }
 
 
-    .grid {
-      position: absolute;
-
-      top: -60%;
-      left: -60%;
-
-      width: 220%;
-      height: 220%;
-
-      background-image:
-        linear-gradient(
-          to right,
-          var(--line) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          to bottom,
-          var(--line) 1px,
-          transparent 1px
-        );
-
-      background-size: 60px 60px;
-
-      opacity: 0.45;
-
-      transform: rotate(-7deg);
-
-      animation: gridMove 24s linear infinite;
-    }
-
-
-    @keyframes gridMove {
-      from {
-        transform:
-          translate3d(0, 0, 0)
-          rotate(-7deg);
-      }
-
-      to {
-        transform:
-          translate3d(-60px, -60px, 0)
-          rotate(-7deg);
-      }
-    }
-
-
-    .orb {
-      position: absolute;
-
-      width: 75vw;
-      height: 75vw;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(217, 95, 50, 0.15) 0%,
-          rgba(217, 95, 50, 0.06) 38%,
-          transparent 70%
-        );
-
-      filter: blur(15px);
-
-      animation: floatingOrb 10s ease-in-out infinite;
-    }
-
-
-    .orb.one {
-      top: -30%;
-      right: -25%;
-    }
-
-
-    .orb.two {
-      bottom: -30%;
-      left: -25%;
-
-      animation-delay: -5s;
-    }
-
-
-    @keyframes floatingOrb {
-
-      0%,
-      100% {
-        transform: translate3d(0, 0, 0);
-      }
-
-      50% {
-        transform: translate3d(15px, -15px, 0);
-      }
-
-    }
-
-
-    /* =========================================================
+    /* =====================================================
        PAGE
-    ========================================================= */
+    ===================================================== */
 
     .page {
       position: relative;
-
-      z-index: 2;
 
       width: 100%;
       min-height: 100svh;
@@ -218,49 +96,84 @@
       flex-direction: column;
 
       padding:
-        max(20px, env(safe-area-inset-top))
-        max(20px, env(safe-area-inset-right))
-        max(20px, env(safe-area-inset-bottom))
-        max(20px, env(safe-area-inset-left));
+        max(22px, env(safe-area-inset-top))
+        max(22px, env(safe-area-inset-right))
+        max(22px, env(safe-area-inset-bottom))
+        max(22px, env(safe-area-inset-left));
+
+      isolation: isolate;
     }
 
 
-    /* =========================================================
+    /* =====================================================
+       BACKGROUND
+    ===================================================== */
+
+    .background {
+      position: fixed;
+      inset: 0;
+
+      z-index: -1;
+
+      pointer-events: none;
+
+      overflow: hidden;
+    }
+
+
+    .grain {
+      position: absolute;
+      inset: 0;
+
+      opacity: 0.045;
+
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+
+      mix-blend-mode: multiply;
+    }
+
+
+    .glow {
+      position: absolute;
+
+      width: 80vw;
+      height: 80vw;
+
+      right: -40vw;
+      top: -25vw;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(212, 93, 49, 0.16),
+          transparent 68%
+        );
+
+      filter: blur(20px);
+    }
+
+
+    /* =====================================================
        HEADER
-    ========================================================= */
+    ===================================================== */
 
     header {
-      width: 100%;
-
       display: flex;
-      align-items: center;
-      justify-content: space-between;
 
-      gap: 15px;
+      justify-content: space-between;
+      align-items: flex-start;
 
       animation:
-        fadeDown 0.7s ease both;
+        enterTop 0.8s cubic-bezier(.16,1,.3,1) both;
     }
 
 
-    .brand {
-      min-width: 0;
-
-      display: flex;
-      align-items: center;
-
-      gap: 11px;
-
-      color: inherit;
-      text-decoration: none;
-    }
-
-
-    .brand img {
-      width: 48px;
-      height: 48px;
-
-      flex: 0 0 48px;
+    .logo {
+      width: 74px;
+      height: 74px;
 
       object-fit: contain;
 
@@ -268,238 +181,13 @@
     }
 
 
-    .brand-name {
-      font-size: 16px;
-      line-height: 1;
-
-      font-weight: 900;
-
-      letter-spacing: -0.7px;
-
-      white-space: nowrap;
-    }
-
-
     .status {
-      flex-shrink: 0;
-
       display: flex;
       align-items: center;
 
       gap: 7px;
 
-      font-family: "DM Mono", monospace;
-
-      font-size: 8px;
-
-      line-height: 1.2;
-
-      letter-spacing: 0.07em;
-
-      text-transform: uppercase;
-
-      color: var(--muted);
-
-      white-space: nowrap;
-    }
-
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-
-      flex: 0 0 7px;
-
-      border-radius: 50%;
-
-      background: var(--accent);
-
-      animation: pulse 2s infinite;
-    }
-
-
-    @keyframes pulse {
-
-      0% {
-        box-shadow:
-          0 0 0 0
-          rgba(217, 95, 50, 0.45);
-      }
-
-      70% {
-        box-shadow:
-          0 0 0 8px
-          rgba(217, 95, 50, 0);
-      }
-
-      100% {
-        box-shadow:
-          0 0 0 0
-          rgba(217, 95, 50, 0);
-      }
-
-    }
-
-
-    /* =========================================================
-       MAIN
-    ========================================================= */
-
-    main {
-      flex: 1;
-
-      width: 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding:
-        clamp(35px, 8vh, 75px)
-        0
-        clamp(30px, 7vh, 65px);
-    }
-
-
-    .content {
-      width: 100%;
-      max-width: 1050px;
-
-      text-align: center;
-    }
-
-
-    /* =========================================================
-       EYEBROW
-    ========================================================= */
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      gap: 8px;
-
-      padding: 8px 11px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 999px;
-
-      background:
-        rgba(250, 248, 242, 0.55);
-
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-
-      font-family: "DM Mono", monospace;
-
-      font-size: 8px;
-
-      line-height: 1;
-
-      letter-spacing: 0.1em;
-
-      text-transform: uppercase;
-
-      color: var(--muted);
-
-      animation:
-        fadeUp 0.7s 0.1s ease both;
-    }
-
-
-    .eyebrow span {
-      color: var(--accent);
-    }
-
-
-    /* =========================================================
-       MAIN HEADING
-    ========================================================= */
-
-    h1 {
-      margin-top: 23px;
-
-      width: 100%;
-
-      font-size:
-        clamp(
-          54px,
-          16.8vw,
-          92px
-        );
-
-      line-height: 0.86;
-
-      letter-spacing: -0.085em;
-
-      font-weight: 900;
-
-      text-transform: uppercase;
-
-      animation:
-        reveal
-        0.95s
-        0.2s
-        cubic-bezier(.16, 1, .3, 1)
-        both;
-    }
-
-
-    h1 .outline {
-      color: transparent;
-
-      -webkit-text-stroke:
-        clamp(1px, 0.35vw, 1.5px)
-        var(--ink);
-    }
-
-
-    /* =========================================================
-       DESCRIPTION
-    ========================================================= */
-
-    .description {
-      width: min(100%, 480px);
-
-      margin:
-        25px auto 0;
-
-      padding:
-        0 8px;
-
-      font-size: 14px;
-
-      line-height: 1.65;
-
-      color: var(--muted);
-
-      animation:
-        fadeUp 0.7s 0.4s ease both;
-    }
-
-
-    /* =========================================================
-       PROGRESS
-    ========================================================= */
-
-    .progress-wrap {
-      width: min(100%, 330px);
-
-      margin:
-        31px auto 0;
-
-      animation:
-        fadeUp 0.7s 0.55s ease both;
-    }
-
-
-    .progress-info {
-      display: flex;
-      justify-content: space-between;
-
-      margin-bottom: 8px;
+      margin-top: 7px;
 
       font-family: "DM Mono", monospace;
 
@@ -511,79 +199,210 @@
 
       text-transform: uppercase;
 
-      color: var(--muted);
+      color: var(--grey);
     }
 
 
-    .progress {
+    .status-dot {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: var(--orange);
+
+      animation: breathe 2.4s ease-in-out infinite;
+    }
+
+
+    @keyframes breathe {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.7);
+      }
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    main {
+      flex: 1;
+
+      display: flex;
+      align-items: center;
+
+      padding:
+        clamp(55px, 13vh, 115px)
+        0
+        clamp(45px, 10vh, 90px);
+    }
+
+
+    .hero {
       width: 100%;
-      height: 3px;
-
-      overflow: hidden;
-
-      background:
-        rgba(23, 23, 20, 0.1);
     }
 
 
-    .progress-bar {
-      width: 72%;
-      height: 100%;
+    .kicker {
+      display: flex;
+      align-items: center;
 
-      background: var(--ink);
+      gap: 10px;
 
-      transform-origin: left;
+      margin-bottom: 18px;
+
+      font-family: "DM Mono", monospace;
+
+      font-size: 9px;
+
+      line-height: 1.2;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      color: var(--grey);
 
       animation:
-        progress
-        1.4s
-        0.75s
-        cubic-bezier(.16, 1, .3, 1)
+        fadeUp 0.8s 0.12s cubic-bezier(.16,1,.3,1) both;
+    }
+
+
+    .kicker-line {
+      width: 24px;
+      height: 1px;
+
+      background: var(--orange);
+    }
+
+
+    /* =====================================================
+       HEADING
+    ===================================================== */
+
+    h1 {
+      margin: 0;
+
+      max-width: 100%;
+
+      font-size:
+        clamp(
+          61px,
+          18.5vw,
+          108px
+        );
+
+      line-height: 0.84;
+
+      letter-spacing: -0.09em;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+
+      animation:
+        titleReveal
+        1.05s
+        0.18s
+        cubic-bezier(.16,1,.3,1)
         both;
     }
 
 
-    @keyframes progress {
-
-      from {
-        transform: scaleX(0);
-      }
-
-      to {
-        transform: scaleX(1);
-      }
-
+    h1 .solid {
+      display: block;
     }
 
 
-    /* =========================================================
-       FOOTER
-    ========================================================= */
+    h1 .outline {
+      display: block;
 
-    footer {
+      color: transparent;
+
+      -webkit-text-stroke:
+        1.3px var(--ink);
+    }
+
+
+    /* =====================================================
+       COPY
+    ===================================================== */
+
+    .copy {
+      max-width: 390px;
+
+      margin-top: 28px;
+
+      font-size: 15px;
+
+      line-height: 1.65;
+
+      color: var(--grey);
+
+      animation:
+        fadeUp
+        0.8s
+        0.42s
+        cubic-bezier(.16,1,.3,1)
+        both;
+    }
+
+
+    .copy strong {
+      color: var(--ink);
+
+      font-weight: 600;
+    }
+
+
+    /* =====================================================
+       BOTTOM INFO
+    ===================================================== */
+
+    .bottom {
+      animation:
+        fadeUp
+        0.8s
+        0.62s
+        cubic-bezier(.16,1,.3,1)
+        both;
+    }
+
+
+    .rule {
       width: 100%;
+      height: 1px;
 
+      margin-bottom: 15px;
+
+      background: var(--line);
+    }
+
+
+    .bottom-row {
       display: flex;
 
       justify-content: space-between;
       align-items: flex-end;
 
       gap: 20px;
-
-      padding-top: 17px;
-
-      border-top:
-        1px solid var(--line);
-
-      animation:
-        fadeUp 0.7s 0.7s ease both;
     }
 
 
-    .footer-left {
+    .descriptor {
       font-family: "DM Mono", monospace;
 
-      font-size: 7px;
+      font-size: 8px;
 
       line-height: 1.65;
 
@@ -591,37 +410,214 @@
 
       text-transform: uppercase;
 
-      color: var(--muted);
+      color: var(--grey);
     }
 
 
-    .footer-right {
-      flex-shrink: 0;
+    .year {
+      font-family: "DM Mono", monospace;
 
-      text-align: right;
+      font-size: 8px;
 
-      font-size: 10px;
+      letter-spacing: 0.08em;
 
-      line-height: 1.3;
-
-      font-weight: 600;
+      color: var(--grey);
     }
 
 
-    /* =========================================================
-       ANIMATIONS
-    ========================================================= */
+    /* =====================================================
+       DESKTOP ENHANCEMENT
+       Mobile is the base design.
+    ===================================================== */
 
-    @keyframes fadeDown {
+    @media (min-width: 700px) {
+
+      .page {
+        padding:
+          34px
+          42px
+          28px;
+      }
+
+
+      .logo {
+        width: 82px;
+        height: 82px;
+      }
+
+
+      .status {
+        font-size: 10px;
+        margin-top: 11px;
+      }
+
+
+      main {
+        max-width: 1120px;
+
+        width: 100%;
+
+        margin: 0 auto;
+
+        padding:
+          70px 0
+          80px;
+      }
+
+
+      h1 {
+        font-size:
+          clamp(
+            90px,
+            11vw,
+            155px
+          );
+      }
+
+
+      .copy {
+        font-size: 16px;
+
+        max-width: 500px;
+
+        margin-top: 35px;
+      }
+
+
+      .bottom {
+        max-width: 1120px;
+
+        width: 100%;
+
+        margin: 0 auto;
+      }
+
+    }
+
+
+    /* =====================================================
+       VERY SMALL PHONES
+    ===================================================== */
+
+    @media (max-width: 360px) {
+
+      .page {
+        padding:
+          max(18px, env(safe-area-inset-top))
+          max(18px, env(safe-area-inset-right))
+          max(18px, env(safe-area-inset-bottom))
+          max(18px, env(safe-area-inset-left));
+      }
+
+
+      .logo {
+        width: 62px;
+        height: 62px;
+      }
+
+
+      .status {
+        font-size: 7px;
+      }
+
+
+      main {
+        padding:
+          45px 0
+          40px;
+      }
+
+
+      h1 {
+        font-size: 17vw;
+      }
+
+
+      .copy {
+        margin-top: 23px;
+
+        font-size: 13px;
+      }
+
+    }
+
+
+    /* =====================================================
+       LANDSCAPE MOBILE
+    ===================================================== */
+
+    @media (max-height: 620px) and (orientation: landscape) {
+
+      .page {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+
+      .logo {
+        width: 46px;
+        height: 46px;
+      }
+
+
+      .status {
+        margin-top: 5px;
+      }
+
+
+      main {
+        padding:
+          25px 0
+          25px;
+      }
+
+
+      .kicker {
+        margin-bottom: 10px;
+      }
+
+
+      h1 {
+        font-size: 11vw;
+      }
+
+
+      .copy {
+        margin-top: 16px;
+
+        font-size: 12px;
+
+        max-width: 520px;
+
+        line-height: 1.45;
+      }
+
+
+      .rule {
+        margin-bottom: 10px;
+      }
+
+    }
+
+
+    /* =====================================================
+       MOTION
+    ===================================================== */
+
+    @keyframes enterTop {
 
       from {
         opacity: 0;
-        transform: translateY(-12px);
+
+        transform:
+          translateY(-14px);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
       }
 
     }
@@ -631,18 +627,22 @@
 
       from {
         opacity: 0;
-        transform: translateY(15px);
+
+        transform:
+          translateY(16px);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
       }
 
     }
 
 
-    @keyframes reveal {
+    @keyframes titleReveal {
 
       from {
         opacity: 0;
@@ -667,120 +667,9 @@
     }
 
 
-    /* =========================================================
-       VERY SMALL PHONES
-    ========================================================= */
-
-    @media (max-width: 380px) {
-
-      .page {
-        padding:
-          max(17px, env(safe-area-inset-top))
-          max(17px, env(safe-area-inset-right))
-          max(17px, env(safe-area-inset-bottom))
-          max(17px, env(safe-area-inset-left));
-      }
-
-
-      .brand img {
-        width: 42px;
-        height: 42px;
-
-        flex-basis: 42px;
-      }
-
-
-      .brand-name {
-        font-size: 14px;
-      }
-
-
-      .status {
-        font-size: 7px;
-      }
-
-
-      h1 {
-        font-size: 15.8vw;
-      }
-
-
-      .description {
-        font-size: 13px;
-
-        margin-top: 22px;
-      }
-
-
-      .progress-wrap {
-        margin-top: 27px;
-      }
-
-    }
-
-
-    /* =========================================================
-       LANDSCAPE PHONES
-    ========================================================= */
-
-    @media (max-height: 600px) and (orientation: landscape) {
-
-      .page {
-        padding-top: 15px;
-        padding-bottom: 15px;
-      }
-
-
-      .brand img {
-        width: 38px;
-        height: 38px;
-
-        flex-basis: 38px;
-      }
-
-
-      main {
-        padding:
-          15px 0;
-      }
-
-
-      h1 {
-        margin-top: 13px;
-
-        font-size:
-          clamp(
-            45px,
-            12vh,
-            70px
-          );
-      }
-
-
-      .description {
-        margin-top: 13px;
-
-        font-size: 12px;
-
-        line-height: 1.45;
-      }
-
-
-      .progress-wrap {
-        margin-top: 18px;
-      }
-
-
-      footer {
-        padding-top: 10px;
-      }
-
-    }
-
-
-    /* =========================================================
+    /* =====================================================
        REDUCED MOTION
-    ========================================================= */
+    ===================================================== */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -789,7 +678,6 @@
       *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
       }
 
     }
@@ -801,24 +689,19 @@
 <body>
 
 
-  <!-- =======================================================
-       BACKGROUND
-  ======================================================== -->
+  <!-- BACKGROUND -->
 
   <div class="background">
 
-    <div class="grid"></div>
+    <div class="glow"></div>
 
-    <div class="orb one"></div>
-
-    <div class="orb two"></div>
+    <div class="grain"></div>
 
   </div>
 
 
-  <!-- =======================================================
-       PAGE
-  ======================================================== -->
+
+  <!-- PAGE -->
 
   <div class="page">
 
@@ -828,19 +711,15 @@
     <header>
 
       <a
-        class="brand"
         href="https://koolcid424.github.io/pedalpast/"
-        aria-label="PedalPast homepage"
+        aria-label="PedalPast"
       >
 
         <img
+          class="logo"
           src="https://i.ibb.co/PvZWWyRx/transparent-logo.png"
           alt="PedalPast"
         >
-
-        <span class="brand-name">
-          PEDALPAST
-        </span>
 
       </a>
 
@@ -857,30 +736,27 @@
 
 
 
-    <!-- MAIN -->
+    <!-- HERO -->
 
     <main>
 
-      <section class="content">
+      <section class="hero">
 
 
-        <!-- EYEBROW -->
+        <div class="kicker">
 
-        <div class="eyebrow">
+          <span class="kicker-line"></span>
 
-          <span>●</span>
-
-          PedalPast / 2026
+          PEDALPAST / 2026
 
         </div>
 
 
-
-        <!-- TITLE -->
-
         <h1>
 
-          Under<br>
+          <span class="solid">
+            Under
+          </span>
 
           <span class="outline">
             Development
@@ -889,44 +765,15 @@
         </h1>
 
 
+        <p class="copy">
 
-        <!-- DESCRIPTION -->
+          We’re building something worth
+          <strong>getting on your bike for.</strong>
 
-        <p class="description">
-
-          We’re currently putting the finishing touches on the new
-          PedalPast experience. The bicycles are ready. The adventures
-          are taking shape. The website just needs a little more time
-          in the workshop.
+          The new PedalPast website is currently
+          being put together and will be launching soon.
 
         </p>
-
-
-
-        <!-- PROGRESS -->
-
-        <div class="progress-wrap">
-
-          <div class="progress-info">
-
-            <span>
-              Website build
-            </span>
-
-            <span>
-              In progress
-            </span>
-
-          </div>
-
-
-          <div class="progress">
-
-            <div class="progress-bar"></div>
-
-          </div>
-
-        </div>
 
 
       </section>
@@ -937,24 +784,30 @@
 
     <!-- FOOTER -->
 
-    <footer>
+    <footer class="bottom">
+
+      <div class="rule"></div>
 
 
-      <div class="footer-left">
+      <div class="bottom-row">
 
-        PEDALPAST<br>
 
-        PRIVATE VINTAGE BICYCLE EXPERIENCES
+        <div class="descriptor">
+
+          PRIVATE VINTAGE<br>
+          BICYCLE EXPERIENCES
+
+        </div>
+
+
+        <div class="year">
+
+          EST. 2026
+
+        </div>
+
 
       </div>
-
-
-      <div class="footer-right">
-
-        Coming soon.
-
-      </div>
-
 
     </footer>
 
