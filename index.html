@@ -2,33 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <meta name="theme-color" content="#f1ede3">
-
-  <meta
-    name="description"
-    content="PedalPast. Private vintage bicycle experiences. Website coming soon."
-  >
+  <meta name="description" content="PedalPast. Private vintage bicycle experiences. Website coming soon.">
 
   <title>PedalPast | Coming Soon</title>
 
-  <!-- FAVICON -->
-  <link
-    rel="icon"
-    type="image/png"
-    href="https://i.ibb.co/PvZWWyRx/transparent-logo.png"
-  >
+  <link rel="icon" type="image/png" href="https://i.ibb.co/PvZWWyRx/transparent-logo.png">
+  <link rel="apple-touch-icon" href="https://i.ibb.co/PvZWWyRx/transparent-logo.png">
 
-  <link
-    rel="apple-touch-icon"
-    href="https://i.ibb.co/PvZWWyRx/transparent-logo.png"
-  >
-
-  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -38,11 +21,6 @@
   >
 
   <style>
-
-    /* =====================================================
-       RESET
-    ====================================================== */
-
     * {
       box-sizing: border-box;
     }
@@ -57,19 +35,11 @@
     body {
       background: #f1ede3;
       color: #151513;
-
       font-family: "Inter", sans-serif;
-
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
-
       overflow-x: hidden;
     }
-
-
-    /* =====================================================
-       VARIABLES
-    ====================================================== */
 
     :root {
       --cream: #f1ede3;
@@ -79,17 +49,10 @@
       --line: rgba(21, 21, 19, 0.14);
     }
 
-
-    /* =====================================================
-       PAGE
-    ====================================================== */
-
     .page {
       position: relative;
-
       width: 100%;
       min-height: 100svh;
-
       display: flex;
       flex-direction: column;
 
@@ -102,17 +65,12 @@
       isolation: isolate;
     }
 
-
-    /* =====================================================
-       BACKGROUND
-    ====================================================== */
+    /* BACKGROUND */
 
     .background {
       position: fixed;
       inset: 0;
-
       z-index: -1;
-
       pointer-events: none;
       overflow: hidden;
     }
@@ -120,7 +78,6 @@
     .grain {
       position: absolute;
       inset: 0;
-
       opacity: 0.045;
 
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
@@ -130,13 +87,10 @@
 
     .glow {
       position: absolute;
-
       width: 80vw;
       height: 80vw;
-
       right: -40vw;
       top: -25vw;
-
       border-radius: 50%;
 
       background:
@@ -149,10 +103,7 @@
       filter: blur(20px);
     }
 
-
-    /* =====================================================
-       HEADER
-    ====================================================== */
+    /* HEADER */
 
     header {
       display: flex;
@@ -174,9 +125,7 @@
     .logo {
       width: 98px;
       height: 98px;
-
       object-fit: contain;
-
       display: block;
 
       margin:
@@ -186,39 +135,25 @@
         -12px;
     }
 
-
-    /* =====================================================
-       STATUS
-    ====================================================== */
-
     .status {
       display: flex;
       align-items: center;
-
       gap: 7px;
-
       margin-top: 7px;
 
       font-family: "DM Mono", monospace;
-
       font-size: 8px;
       line-height: 1.2;
-
       letter-spacing: 0.08em;
-
       text-transform: uppercase;
-
       color: var(--grey);
     }
 
     .status-dot {
       width: 6px;
       height: 6px;
-
       flex: 0 0 6px;
-
       border-radius: 50%;
-
       background: var(--orange);
 
       animation:
@@ -228,10 +163,7 @@
         infinite;
     }
 
-
-    /* =====================================================
-       MAIN
-    ====================================================== */
+    /* MAIN */
 
     main {
       width: 100%;
@@ -246,28 +178,19 @@
       width: 100%;
     }
 
-
-    /* =====================================================
-       KICKER
-    ====================================================== */
+    /* KICKER */
 
     .kicker {
       display: flex;
       align-items: center;
-
       gap: 10px;
-
       margin-bottom: 18px;
 
       font-family: "DM Mono", monospace;
-
       font-size: 9px;
       line-height: 1.2;
-
       letter-spacing: 0.12em;
-
       text-transform: uppercase;
-
       color: var(--grey);
 
       animation:
@@ -281,31 +204,21 @@
     .kicker-line {
       width: 24px;
       height: 1px;
-
       flex: 0 0 24px;
-
       background: var(--orange);
     }
 
-
-    /* =====================================================
-       TITLE
-    ====================================================== */
+    /* TITLE */
 
     h1 {
       width: 100%;
       max-width: 100%;
-
       margin: 0;
 
       font-size: clamp(58px, 16vw, 108px);
-
       line-height: 0.84;
-
       letter-spacing: -0.09em;
-
       font-weight: 900;
-
       text-transform: uppercase;
 
       animation:
@@ -322,33 +235,21 @@
 
     h1 .outline {
       display: block;
-
       font-size: 0.88em;
-
       letter-spacing: -0.085em;
-
       color: transparent;
-
       -webkit-text-stroke: 1.3px var(--ink);
-
       white-space: nowrap;
     }
 
-
-    /* =====================================================
-       COPY
-    ====================================================== */
+    /* COPY */
 
     .copy {
       max-width: 390px;
-
-      margin:
-        28px 0 0;
+      margin: 28px 0 0;
 
       font-size: 15px;
-
       line-height: 1.65;
-
       color: var(--grey);
 
       animation:
@@ -361,56 +262,18 @@
 
     .copy strong {
       color: var(--ink);
-
       font-weight: 600;
     }
 
+    /* BUTTONS */
 
-    /* =====================================================
-       CONTACT BUTTON
-    ====================================================== */
-
-    .contact-button {
-      display: inline-flex;
-
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
-
-      gap: 12px;
+      gap: 10px;
 
       margin-top: 25px;
-
-      min-height: 48px;
-
-      padding:
-        0 19px;
-
-      border:
-        1px solid var(--ink);
-
-      border-radius: 999px;
-
-      background: var(--ink);
-
-      color: var(--cream);
-
-      font-family: "DM Mono", monospace;
-
-      font-size: 9px;
-
-      line-height: 1;
-
-      letter-spacing: 0.08em;
-
-      text-transform: uppercase;
-
-      text-decoration: none;
-
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease,
-        box-shadow 0.25s ease;
 
       animation:
         fadeUp
@@ -420,22 +283,48 @@
         both;
     }
 
-    .contact-button::after {
+    .action-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+
+      min-height: 48px;
+      padding: 0 19px;
+
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+
+      background: var(--ink);
+      color: var(--cream);
+
+      font-family: "DM Mono", monospace;
+      font-size: 9px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .action-button::after {
       content: "↗";
 
       font-family: "Inter", sans-serif;
-
       font-size: 14px;
-
       line-height: 1;
 
       transition:
         transform 0.25s ease;
     }
 
-    .contact-button:hover {
+    .action-button:hover {
       background: transparent;
-
       color: var(--ink);
 
       transform: translateY(-2px);
@@ -444,27 +333,19 @@
         0 8px 25px rgba(21, 21, 19, 0.08);
     }
 
-    .contact-button:hover::after {
-      transform:
-        translate(2px, -2px);
+    .action-button:hover::after {
+      transform: translate(2px, -2px);
     }
 
-    .contact-button:active {
-      transform:
-        translateY(0)
-        scale(0.97);
+    .action-button:active {
+      transform: translateY(0) scale(0.97);
     }
 
-
-    /* =====================================================
-       IMAGE
-    ====================================================== */
+    /* IMAGE */
 
     .visual {
       width: 100%;
-
-      margin-top:
-        clamp(34px, 7vw, 80px);
+      margin-top: clamp(34px, 7vw, 80px);
 
       animation:
         imageReveal
@@ -476,7 +357,6 @@
 
     .image-frame {
       position: relative;
-
       width: 100%;
 
       height:
@@ -487,28 +367,22 @@
         );
 
       overflow: hidden;
-
       background: #d7d3c9;
-
       border-radius: 2px;
     }
 
     .image-frame img {
       position: absolute;
-
       left: 0;
-
       top: -7.5%;
 
       width: 100%;
       height: auto;
-
       min-height: 100%;
 
       display: block;
 
       object-fit: cover;
-
       object-position: center center;
 
       transform: scale(1.015);
@@ -526,17 +400,12 @@
       transform: scale(1.035);
     }
 
-
-    /* =====================================================
-       IMAGE CAPTION
-    ====================================================== */
+    /* IMAGE CAPTION */
 
     .image-caption {
       display: flex;
-
       justify-content: space-between;
       align-items: flex-start;
-
       gap: 20px;
 
       margin-top: 11px;
@@ -544,14 +413,10 @@
 
     .image-caption span {
       font-family: "DM Mono", monospace;
-
       font-size: 7px;
       line-height: 1.5;
-
       letter-spacing: 0.08em;
-
       text-transform: uppercase;
-
       color: var(--grey);
     }
 
@@ -559,14 +424,10 @@
       text-align: right;
     }
 
-
-    /* =====================================================
-       FOOTER
-    ====================================================== */
+    /* FOOTER */
 
     .bottom {
-      margin-top:
-        clamp(45px, 8vw, 85px);
+      margin-top: clamp(45px, 8vw, 85px);
 
       animation:
         fadeUp
@@ -579,53 +440,37 @@
     .rule {
       width: 100%;
       height: 1px;
-
       margin-bottom: 15px;
-
       background: var(--line);
     }
 
     .bottom-row {
       display: flex;
-
       justify-content: space-between;
       align-items: flex-end;
-
       gap: 20px;
     }
 
     .descriptor {
       font-family: "DM Mono", monospace;
-
       font-size: 8px;
       line-height: 1.65;
-
       letter-spacing: 0.08em;
-
       text-transform: uppercase;
-
       color: var(--grey);
     }
 
     .year {
       font-family: "DM Mono", monospace;
-
       font-size: 8px;
-
       letter-spacing: 0.08em;
-
       color: var(--grey);
     }
 
-
-    /* =====================================================
-       ANIMATIONS
-    ====================================================== */
+    /* ANIMATIONS */
 
     @keyframes breathe {
-
-      0%,
-      100% {
+      0%, 100% {
         opacity: 1;
         transform: scale(1);
       }
@@ -637,7 +482,6 @@
     }
 
     @keyframes enterTop {
-
       from {
         opacity: 0;
         transform: translateY(-14px);
@@ -650,7 +494,6 @@
     }
 
     @keyframes fadeUp {
-
       from {
         opacity: 0;
         transform: translateY(16px);
@@ -663,34 +506,24 @@
     }
 
     @keyframes titleReveal {
-
       from {
         opacity: 0;
-
-        transform:
-          translateY(35px);
+        transform: translateY(35px);
 
         clip-path:
-          inset(
-            100% 0 0 0
-          );
+          inset(100% 0 0 0);
       }
 
       to {
         opacity: 1;
-
-        transform:
-          translateY(0);
+        transform: translateY(0);
 
         clip-path:
-          inset(
-            0 0 0 0
-          );
+          inset(0 0 0 0);
       }
     }
 
     @keyframes imageReveal {
-
       from {
         opacity: 0;
 
@@ -699,9 +532,7 @@
           scale(0.985);
 
         clip-path:
-          inset(
-            8% 0 8% 0
-          );
+          inset(8% 0 8% 0);
       }
 
       to {
@@ -712,16 +543,11 @@
           scale(1);
 
         clip-path:
-          inset(
-            0 0 0 0
-          );
+          inset(0 0 0 0);
       }
     }
 
-
-    /* =====================================================
-       DESKTOP
-    ====================================================== */
+    /* DESKTOP */
 
     @media (min-width: 700px) {
 
@@ -745,13 +571,11 @@
 
       .status {
         font-size: 10px;
-
         margin-top: 11px;
       }
 
       main {
         max-width: 1120px;
-
         margin: 0 auto;
 
         padding:
@@ -761,12 +585,7 @@
       }
 
       h1 {
-        font-size:
-          clamp(
-            90px,
-            11vw,
-            155px
-          );
+        font-size: clamp(90px, 11vw, 155px);
       }
 
       h1 .outline {
@@ -775,17 +594,16 @@
 
       .copy {
         max-width: 500px;
-
         margin-top: 35px;
-
         font-size: 16px;
       }
 
-      .contact-button {
+      .action-buttons {
         margin-top: 28px;
+      }
 
+      .action-button {
         min-height: 50px;
-
         padding: 0 21px;
       }
 
@@ -794,12 +612,7 @@
       }
 
       .image-frame {
-        height:
-          min(
-            68vw,
-            680px
-          );
-
+        height: min(68vw, 680px);
         border-radius: 3px;
       }
 
@@ -813,7 +626,6 @@
 
       .bottom {
         max-width: 1120px;
-
         width: 100%;
 
         margin:
@@ -823,10 +635,7 @@
       }
     }
 
-
-    /* =====================================================
-       VERY SMALL PHONES
-    ====================================================== */
+    /* VERY SMALL PHONES */
 
     @media (max-width: 360px) {
 
@@ -866,23 +675,22 @@
 
       h1 .outline {
         font-size: 0.86em;
-
         letter-spacing: -0.085em;
       }
 
       .copy {
         margin-top: 23px;
-
         font-size: 13px;
       }
 
-      .contact-button {
-        min-height: 46px;
-
+      .action-buttons {
+        gap: 8px;
         margin-top: 21px;
+      }
 
+      .action-button {
+        min-height: 46px;
         padding: 0 16px;
-
         font-size: 8px;
       }
 
@@ -903,10 +711,7 @@
       }
     }
 
-
-    /* =====================================================
-       LANDSCAPE PHONES
-    ====================================================== */
+    /* LANDSCAPE PHONES */
 
     @media (max-height: 620px) and (orientation: landscape) {
 
@@ -950,18 +755,17 @@
 
       .copy {
         max-width: 520px;
-
         margin-top: 16px;
-
         font-size: 12px;
-
         line-height: 1.45;
       }
 
-      .contact-button {
-        min-height: 42px;
-
+      .action-buttons {
         margin-top: 16px;
+      }
+
+      .action-button {
+        min-height: 42px;
       }
 
       .visual {
@@ -981,10 +785,7 @@
       }
     }
 
-
-    /* =====================================================
-       REDUCED MOTION
-    ====================================================== */
+    /* REDUCED MOTION */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -1003,27 +804,14 @@
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- BACKGROUND -->
-
   <div class="background">
-
     <div class="glow"></div>
-
     <div class="grain"></div>
-
   </div>
 
-
-  <!-- PAGE -->
-
   <div class="page">
-
-
-    <!-- HEADER -->
 
     <header>
 
@@ -1031,89 +819,60 @@
         href="https://koolcid424.github.io/pedalpast/"
         aria-label="PedalPast"
       >
-
         <img
           class="logo"
           src="https://i.ibb.co/PvZWWyRx/transparent-logo.png"
           alt="PedalPast"
         >
-
       </a>
 
-
       <div class="status">
-
         <span class="status-dot"></span>
-
         Website in progress
-
       </div>
 
     </header>
-
-
-
-    <!-- MAIN -->
 
     <main>
 
       <section class="hero">
 
-
-        <!-- KICKER -->
-
         <div class="kicker">
-
           <span class="kicker-line"></span>
-
           PEDALPAST / 2026
-
         </div>
 
-
-
-        <!-- TITLE -->
-
         <h1>
-
-          <span class="solid">
-            Under
-          </span>
-
-          <span class="outline">
-            Development
-          </span>
-
+          <span class="solid">Under</span>
+          <span class="outline">Development</span>
         </h1>
 
-
-
-        <!-- COPY -->
-
         <p class="copy">
-
           We’re building something worth
           <strong>getting on your bike for.</strong>
           The new PedalPast website is currently
           being put together and will be launching soon.
-
         </p>
 
+        <div class="action-buttons">
 
+          <a
+            class="action-button"
+            href="mailto:hello@pedalpast.co.uk"
+            aria-label="Email PedalPast at hello@pedalpast.co.uk"
+          >
+            Contact PedalPast
+          </a>
 
-        <!-- CONTACT -->
+          <a
+            class="action-button"
+            href="https://blog.pedalpast.co.uk"
+            aria-label="Visit the PedalPast blog"
+          >
+            Blog
+          </a>
 
-        <a
-          class="contact-button"
-          href="mailto:hello@pedalpast.co.uk"
-          aria-label="Email PedalPast at hello@pedalpast.co.uk"
-        >
-          Contact PedalPast
-        </a>
-
-
-
-        <!-- IMAGE -->
+        </div>
 
         <div class="visual">
 
@@ -1126,7 +885,6 @@
             >
 
           </div>
-
 
           <div class="image-caption">
 
@@ -1144,43 +902,30 @@
 
         </div>
 
-
       </section>
 
     </main>
-
-
-
-    <!-- FOOTER -->
 
     <footer class="bottom">
 
       <div class="rule"></div>
 
-
       <div class="bottom-row">
 
         <div class="descriptor">
-
           PRIVATE VINTAGE<br>
           BICYCLE EXPERIENCES
-
         </div>
 
-
         <div class="year">
-
           EST. 2026
-
         </div>
 
       </div>
 
     </footer>
 
-
   </div>
-
 
 </body>
 </html>
